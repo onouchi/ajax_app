@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-
-  def  index
+  def index
     @posts = Post.all.order(id: "DESC")
   end
 
@@ -8,7 +7,7 @@ class PostsController < ApplicationController
     Post.create(content: params[:content])
     redirect_to action: :index
   end
-  
+
   def checked
     post = Post.find(params[:id])
     if post.checked 
